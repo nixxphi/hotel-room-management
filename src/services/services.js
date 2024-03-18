@@ -1,5 +1,5 @@
-const RoomType = require('./models/RoomType');
-const Room = require('./models/Room');
+import RoomType from './models/RoomType';
+import Room from './models/Room';
 
 // SERVICE FUNCTIONS FOR MANAGING ROOM TYPES
 const roomTypeService = {
@@ -49,4 +49,4 @@ const roomService = {
   }
 };
 
-module.exports = { roomTypeService, roomService };
+export { roomTypeService, roomService };
