@@ -14,6 +14,7 @@ This project is a Hotel Rooms Management System built with Node.js, Express.js, 
 - Integration with MongoDB database, express and Winston logger.
 
 ## Installation
+The API key is "learnable.task.X"
 
 1. Clone the repository:
    ```bash
