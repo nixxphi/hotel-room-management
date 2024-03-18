@@ -90,41 +90,15 @@ hotelRooms/
 └── README.md
 
 ```
-### Testing
-
-#### Unit Testing
-Unit testing is essential for ensuring that individual units of your code (such as functions, modules, or classes) work as expected. In this project, we use **Mocha** as the testing framework and **Chai** as the assertion library for writing unit tests.
-
-To run unit tests, use the following command:
-
-```bash
-npm test
-```
-
-#### Integration Testing
-Integration testing is performed to test the integration of different parts of the system, such as testing API endpoints with actual HTTP requests. In this project, we use **Supertest** for making HTTP requests to our Express application and verifying the responses.
-
-#### Test Coverage
-Test coverage is a measure of how much of your code is covered by tests. It's important to aim for high test coverage to ensure that most of your code is tested and to catch any potential bugs early in the development process. We can use tools like **Istanbul** to generate test coverage reports.
-
-#### Test Directory Structure
-Our tests are organized into the `tests` directory. Within this directory, we have separate files for unit tests and integration tests. Each test file corresponds to a specific module or functionality of the application.
-
-#### Running Tests
-To run the tests, execute the following command in your terminal:
-
-```bash
-npm test
-```
-
-This command will run all the tests in the `tests` directory and provide feedback on whether they passed or failed. Additionally, it may generate reports on test coverage if configured to do so.
 ## Technologies Used
 
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
-- Winston
+- Winston logger
+- Chai sinon
+- Mocha
 
 
 ## Authors
