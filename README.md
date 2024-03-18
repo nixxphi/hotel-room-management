@@ -27,6 +27,8 @@ The API key is "learnable.task.X"
    npm install mongoose
    npm install express
    npm install nodemon
+   npm install chai sinon --save-dev
+   npm install mocha 
    ```
 3. The dotenv file includes the following
    - PORT=5000
