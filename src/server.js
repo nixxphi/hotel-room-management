@@ -5,7 +5,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import roomTypeRouter from './src/routes/roomTypeRouter';
 import roomRouter from './src/routes/roomRouter';
+import userRouter from './src/routes/userRouter'; // Import userRouter
 import { errorHandler, logger } from './src/utils';
+import apiKeyValidator from './src/middleware/apiKeyValidator'; 
+import authMiddleware from './src/middleware/authMiddleware'; // Import authMiddleware
+import { userAuth } from './src/middleware/userAuth'; // Import userAuth middleware
 
 // LOAD ENVIRONMENT VARIABLES FROM .ENV FILE
 dotenv.config();
@@ -32,7 +36,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 // MIDDLEWARE TO VALIDATE API KEY FOR ALL ROUTES
- app.use(apiKeyValidator);
+app.use(apiKeyValidator);
 
 // LOGGER MIDDLEWARE
 app.use((req, res, next) => {
@@ -43,6 +47,13 @@ app.use((req, res, next) => {
 // ROUTES
 app.use('/api/v1', roomTypeRouter);
 app.use('/api/v1/rooms', roomRouter);
+app.use('/api/v1/users', userRouter); // Add userRouter for user-related endpoints
+
+// AUTHENTICATION MIDDLEWARE
+app.use(authMiddleware);
+
+// AUTHORIZATION MIDDLEWARE
+app.use('/api/v1/rooms', userAuth); // Protect room routes with userAuth middleware
 
 // ERROR HANDLING MIDDLEWARE
 app.use(errorHandler);
