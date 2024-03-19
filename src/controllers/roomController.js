@@ -1,4 +1,4 @@
-import Room from '../models/Room';
+import Room from '../models/Room.js';
 
 // Controller functions for managing rooms
 const roomController = {
