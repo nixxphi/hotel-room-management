@@ -7,6 +7,8 @@ import authorizationMiddleware from '../middlewares/authorizationMiddleware';
 import validationMiddleware from '../middlewares/validationMiddleware';
 import Joi from 'joi';
 
+const router = Router();
+
 // Adding validation schema for creating a new room type
 const roomTypeSchema = Joi.object({
   name: Joi.string().required(),
@@ -22,13 +24,8 @@ router.post('/api/v1/room-types',
   authMiddleware,
   authorizationMiddleware,
   validationMiddleware(roomTypeSchema),
-  roomTypeController.createRoomType
+  asyncHandler(roomTypeController.createRoomType)
 );
-
-const router = Router();
-
-// POST endpoint for creating room types
-router.post('/api/v1/room-types', asyncHandler(roomTypeController.createRoomType));
 
 // GET endpoint for fetching all room types
 router.get('/api/v1/room-types', asyncHandler(roomTypeController.getAllRoomTypes));
