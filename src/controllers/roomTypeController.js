@@ -1,4 +1,4 @@
-import RoomType from '../models/RoomType';
+import RoomType from '../models/RoomType.js';
 
 // Controller function for creating a new room type
 const createRoomType = async (req, res) => {
@@ -75,4 +75,4 @@ const deleteRoomTypeById = async (req, res) => {
   }
 };
 
-export { createRoomType, getAllRoomTypes, getRoomTypeById, updateRoomTypeById, deleteRoomTypeById };
+export default { createRoomType, getAllRoomTypes, getRoomTypeById, updateRoomTypeById, deleteRoomTypeById };
