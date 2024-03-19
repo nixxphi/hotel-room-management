@@ -2,7 +2,7 @@ import express from 'express';
 import { Router } from 'express';
 import * as roomTypeController from '../controllers/roomTypeController.js';
 import { asyncHandler } from '../utils/utils.js';
-import authMiddleware from '../middlewares/authMiddleware.jd';
+import authMiddleware from '../middlewares/authMiddleware.js';
 import authorizationMiddleware from '../middlewares/authorizationMiddleware.js';
 import validationMiddleware from '../middlewares/validationMiddleware.js';
 import Joi from 'joi';
