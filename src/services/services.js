@@ -1,5 +1,6 @@
 import RoomType from './models/RoomType';
 import Room from './models/Room';
+import User from './models/User';
 
 // SERVICE FUNCTIONS FOR MANAGING ROOM TYPES
 const roomTypeService = {
@@ -49,4 +50,28 @@ const roomService = {
   }
 };
 
-export { roomTypeService, roomService };
+// SERVICE FUNCTIONS FOR MANAGING USERS
+const userService = {
+  async createUser(username, password, role) {
+    const newUser = new User({ username, password, role });
+    return await newUser.save();
+  },
+
+  async getAllUsers() {
+    return await User.find();
+  },
+
+  async getUserById(id) {
+    return await User.findById(id);
+  },
+
+  async updateUser(id, newData) {
+    return await User.findByIdAndUpdate(id, newData, { new: true });
+  },
+
+  async deleteUser(id) {
+    return await User.findByIdAndDelete(id);
+  }
+};
+
+export { roomTypeService, roomService, userService };
