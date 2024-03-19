@@ -30,9 +30,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 .then(() => {
   logger.info('Connected to MongoDB');
+  console.log('Connected to MongoDB');
 })
 .catch((error) => {
   logger.error('Error connecting to MongoDB:', error);
+  console.log('Error connecting to MongoDB');
 });
 
 // MIDDLEWARE TO VALIDATE API KEY FOR ALL ROUTES
@@ -61,5 +63,6 @@ app.use(errorHandler);
 // STARTING THE SERVER
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
   logger.info(`Server listening on port ${PORT}`);
 });
