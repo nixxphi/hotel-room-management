@@ -3,13 +3,13 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import roomTypeRouter from './src/routes/roomTypeRouter';
-import roomRouter from './src/routes/roomRouter';
-import userRouter from './src/routes/userRouter'; // Import userRouter
+import roomTypeRouter from './routes/roomTypeRouter';
+import roomRouter from './routes/roomRouter';
+import userRouter from './routes/userRouter'; 
 import { errorHandler, logger } from './src/utils';
-import apiKeyValidator from './src/middleware/apiKeyValidator'; 
-import authMiddleware from './src/middleware/authMiddleware'; // Import authMiddleware
-import { userAuth } from './src/middleware/userAuth'; // Import userAuth middleware
+import apiKeyValidator from './middlewares/apiKeyValidator'; 
+import authMiddleware from './middlewares/authMiddleware';
+import { userAuth } from './middlewares/userAuth'; 
 
 // LOAD ENVIRONMENT VARIABLES FROM .ENV FILE
 dotenv.config();
