@@ -28,7 +28,9 @@ The API key is "learnable.task.X"
    npm install express
    npm install nodemon
    npm install chai sinon --save-dev
-   npm install mocha 
+   npm install mocha
+   npm install supertest
+   npm install bcrypt jsonwebtoken joi
    ```
 3. The dotenv file includes the following
    - PORT=5000
