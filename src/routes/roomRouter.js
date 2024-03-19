@@ -1,7 +1,7 @@
 import express from 'express';
 import { Router } from 'express'; 
-import * as roomController from '../controllers/roomController'; 
-import { asyncHandler } from '../utils'; 
+import * as roomController from '../controllers/roomController.js'; 
+import { asyncHandler } from '../utils/utils.js'; 
 
 // CREATE A NEW ROUTER INSTANCE
 const router = Router();
