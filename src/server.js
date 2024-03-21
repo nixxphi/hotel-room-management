@@ -9,7 +9,7 @@ import userRouter from './routes/userRouter.js';
 import { errorHandler } from './src/utils/utils.js';
 import authMiddleware from './middlewares/authMiddleware.js';
 import { userAuth } from './middlewares/userAuthjs'; 
-
+import { logger } from './config/Winston.js';
 // LOAD ENVIRONMENT VARIABLES FROM .ENV FILE
 dotenv.config();
 
