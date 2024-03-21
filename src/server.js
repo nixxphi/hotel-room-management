@@ -7,7 +7,6 @@ import roomTypeRouter from './routes/roomTypeRouter.js';
 import roomRouter from './routes/roomRouter.js';
 import userRouter from './routes/userRouter.js'; 
 import { errorHandler, logger } from './src/utils/utils.js';
-import apiKeyValidator from './middlewares/apiKeyValidator.js'; 
 import authMiddleware from './middlewares/authMiddleware.js';
 import { userAuth } from './middlewares/userAuthjs'; 
 
@@ -36,9 +35,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   logger.error('Error connecting to MongoDB:', error);
   console.log('Error connecting to MongoDB');
 });
-
-// MIDDLEWARE TO VALIDATE API KEY FOR ALL ROUTES
-app.use(apiKeyValidator);
 
 // LOGGER MIDDLEWARE
 app.use((req, res, next) => {
