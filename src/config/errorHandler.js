@@ -1,4 +1,4 @@
-const { logger } = require('./logger');
+const { logger } = require('./Winston.js');
 
 // Error handling middleware
 const errorHandler = (err, req, res, next) => {
@@ -7,4 +7,3 @@ const errorHandler = (err, req, res, next) => {
 };
 
 module.exports = { errorHandler };
-￼Enter
