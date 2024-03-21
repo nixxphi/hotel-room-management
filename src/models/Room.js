@@ -1,7 +1,7 @@
 import express from 'express';
 import Room from '../models/roomType.js';
 import roomTypeController from '../controllers/roomTypeController.js'; 
-import asyncHandler from '../utils/utils.js';
+import { asyncHandler } from '../utils/utils.js';
 
 const router = express.Router();
 
