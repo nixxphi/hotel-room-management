@@ -1,6 +1,9 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
+import authorizationMiddleware from './authorizationMiddleware.js'; // Import the authorizationMiddleware
+import createValidationMiddleware from './validationMiddleware.js'; // Import the refactored validationMiddleware
+
 const router = express.Router();
 
 const authMiddleware = async (req, res, next) => {
@@ -24,9 +27,26 @@ const adminAuthMiddleware = (req, res, next) => {
   }
   next();
 };
-
 router.use(authMiddleware);
 router.use('/admin', adminAuthMiddleware);
 
-// Exporting router
+router.use('/admin/some-route', authorizationMiddleware); // Attach authorizationMiddleware to a specific route
+
+// Room validation schema
+const roomTypeValidationSchema = {
+  name: {
+    type: 'string',
+    required: true
+  },
+  description: 'string',
+  price: 'number',
+  amenities: 'string',
+  image: 'string',
+  isAvailable: 'boolean'
+};
+
+const validateRoomType = createValidationMiddleware(roomTypeValidationSchema);
+
+router.post('/api/v1/room-types', validateRoomType, asyncHandler(roomTypeController.createRoomType));
+
 export default router;
