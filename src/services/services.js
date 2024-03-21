@@ -1,6 +1,6 @@
 import RoomType from './models/RoomType';
-import Room from './models/Room';
-import User from './models/User';
+import Room from './models/room.js';
+import User from './models/user.js';
 
 // SERVICE FUNCTIONS FOR MANAGING ROOM TYPES
 const roomTypeService = {
