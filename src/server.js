@@ -6,7 +6,7 @@ import cors from 'cors';
 import roomTypeRouter from './routes/roomTypeRouter.js';
 import roomRouter from './routes/roomRouter.js';
 import userRouter from './routes/userRouter.js'; 
-import { errorHandler, logger } from './src/utils/utils.js';
+import { errorHandler } from './src/utils/utils.js';
 import authMiddleware from './middlewares/authMiddleware.js';
 import { userAuth } from './middlewares/userAuthjs'; 
 
