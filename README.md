@@ -34,7 +34,7 @@ The API key is "learnable.task.X"
    ```
 3. The dotenv file includes the following
    - PORT=5000
-   - MONGODB_URI=mongodb+srv://nixxphi:this.is.the@redcluster.pixh5su.mongodb.net/?retryWrites=true&w=majority&appName=Redcluster
+   - MONGODB_URI=mongodb+srv://nixxphi:___________@redcluster.pixh5su.mongodb.net/?retryWrites=true&w=majority&appName=Redcluster
 
 4. Start the server:
    ```bash
