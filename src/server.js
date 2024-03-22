@@ -3,26 +3,21 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import roomTypeRouter from './routes/roomTypeRouter.js';
-import roomRouter from './routes/roomRouter.js';
-import userRouter from './routes/userRouter.js'; 
 import { errorHandler } from './src/utils/utils.js';
-import authMiddleware from './middlewares/authMiddleware.js';
-import { userAuth } from './middlewares/userAuthjs'; 
 import { logger } from './config/Winston.js';
-// LOAD ENVIRONMENT VARIABLES FROM .ENV FILE
+import middlewareRouter from './routes/middlewareRouter.js'; // Import the middleware router
+
+// Loading environment variables from .env file
 dotenv.config();
 
-// CREATING EXPRESS APP
+// Creating an instance of the Express app
 const app = express();
 
-// INCLUDE CORS
+// Middleware
 app.use(cors());
-
-// MIDDLEWARE
 app.use(bodyParser.json());
 
-// MONGODB CONNECTION
+// MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -36,27 +31,19 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.log('Error connecting to MongoDB');
 });
 
-// LOGGER MIDDLEWARE
+// Logger middleware
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`);
   next();
 });
 
-// ROUTES
-app.use('/api/v1', roomTypeRouter);
-app.use('/api/v1/rooms', roomRouter);
-app.use('/api/v1/users', userRouter); // Add userRouter for user-related endpoints
+// Attaching middleware router
+app.use('/', middlewareRouter); // Remove '/routes/' from the path
 
-// AUTHENTICATION MIDDLEWARE
-app.use(authMiddleware);
-
-// AUTHORIZATION MIDDLEWARE
-app.use('/api/v1/rooms', userAuth); // Protect room routes with userAuth middleware
-
-// ERROR HANDLING MIDDLEWARE
+// Error handling middleware
 app.use(errorHandler);
 
-// STARTING THE SERVER
+// Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
