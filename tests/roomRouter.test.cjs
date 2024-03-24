@@ -7,7 +7,7 @@ describe('Room Router', () => {
         body: {
             name: 'Single Deluxe',
             description: 'Single air-conditioned room with WiFi access.',
-            capacity: 2,
+            star_rank: 2,
             beds: 1,
             price: 6800,
             amenities: 'Wifi, air conditioning and a fully functional bathroom',
@@ -20,7 +20,7 @@ describe('Room Router', () => {
         json: sinon.spy()
       };
 
-      await import('../src/controllers/roomController').then(({ createRoom }) => {
+      await import('../src/controllers/room.controller.js').then(({ createRoom }) => {
         createRoom(req, res);
       });
 
@@ -40,7 +40,7 @@ describe('Room Router', () => {
         json: sinon.spy()
       };
 
-        await import('../src/services/roomService').then(({ getAllRooms }) => {
+        await import('../src/services/index.services.js').then(({ getAllRooms }) => {
         getAllRooms(req, res);
       });
 
