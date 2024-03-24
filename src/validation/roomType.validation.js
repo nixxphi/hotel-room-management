@@ -1,16 +1,17 @@
+import joi from 'joi';
+import validateObjectId  from '../utils/id.util.js'
 
-import Joi from 'joi';
-import validate from '../middlewares/validate.middleware.js';
+export const CreateRoomTypeSchema = {
+    body: joi.object({
+      name: joi.string().required()
+    }) 
+}
 
-const roomTypeValidationSchema = {
-  body: Joi.object({
-    name: Joi.string().required(),
-    star_rank: Joi.number(),
-    description: Joi.string(),
-    price: Joi.number().required(),
+export const EditRoomTypeSchema = {
+  body: joi.object({
+    name: joi.string().required()
+  }),
+  params: joi.object({
+    id: joi.string().custom(validateObjectId, 'object id validation').required()
   })
-};
-
-const roomTypeValidator = validate(roomTypeValidationSchema);
-
-export default roomTypeValidator;
+}

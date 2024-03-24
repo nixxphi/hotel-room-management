@@ -1,15 +1,16 @@
+import joi from 'joi';
 
-import Joi from 'joi';
-import validate from '../middlewares/validate.middleware.js';
+export const RegisterUserSchema = {
+    body: joi.object({
+      username: joi.string().required(),
+      password: joi.string().required(),
+      role: joi.string().valid("admin", "guest").optional()
+    }) 
+}
 
-const usersValidationSchema = {
-  body: Joi.object({
-    username: Joi.string().required(),
-    email: Joi.string().email().required(),
-    role: Joi.string().valid('admin', 'guest').required(),
-  })
-};
-
-const userValidationMiddleware = validate(userValidationSchema);
-
-export default userValidator;
+export const LoginUserSchema = {
+  body: joi.object({
+    username: joi.string().required(),
+    password: joi.string().required()
+  }) 
+}
