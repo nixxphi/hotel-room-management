@@ -1,6 +1,6 @@
 { 
    "type": "module", 
-   "name": "myHotel-Manager", 
+   "name": "hotelrooms", 
    "version": "1.0.0", 
    "description": "Hotelrooms api", 
    "main": "src/server.js", 
@@ -11,7 +11,7 @@
      "start": "node -r dotenv/config src/server.js" 
    }, 
    "keywords": [], 
-   "author": "Igwenagu Chukwuma", 
+   "author": "Igwenagu Chukwuma in ", 
    "license": "ISC", 
    "dependencies": { 
      "bcrypt": "^5.1.1", 
@@ -37,4 +37,4 @@
    "directories": { 
      "test": "tests" 
    } 
- }
+}
