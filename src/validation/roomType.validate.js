@@ -11,6 +11,6 @@ const roomTypeValidationSchema = {
   })
 };
 
-const roomTypeValidationMiddleware = validate(roomTypeValidationSchema);
+const roomTypeValidator = validate(roomTypeValidationSchema);
 
 export default roomTypeValidator;

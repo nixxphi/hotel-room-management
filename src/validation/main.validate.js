@@ -1,7 +1,7 @@
 
-const userValidator = require('./user.validate.js';
+import userValidator from './user.validate.js';
 import roomValidator from './room.validate.js';
-const roomTypeValidator = require('./roomType.validator');
+import roomTypeValidator from './roomType.validator';
 
 // Define the main validator object
 const validator = {

@@ -18,4 +18,4 @@ import mongoose from 'mongoose';
      } 
   
      startdb() 
- })(
+ })

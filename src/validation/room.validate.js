@@ -13,6 +13,6 @@ name: Joi.string().required(),
   })
 };
 
-const roomsValidationMiddleware = validate(roomsValidationSchema);
+const roomValidator = validate(roomsValidationSchema);
 
 export default roomValidator;
