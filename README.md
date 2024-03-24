@@ -18,12 +18,12 @@ The API key is "learnable.task.X"
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nixxphi/hotelRooms.git
+   git clone https://github.com/nixxphi/hotel-room-management.git
    ```
 
 2. Install dependencies:
    ```bash
-   npm install winston
+   npm install pino
    npm install mongoose
    npm install express
    npm install nodemon
@@ -98,13 +98,23 @@ hotelRooms/
 ## Technologies Used
 
 - Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Winston logger
-- Chai sinon
-- Mocha
-
+    "bcrypt": "^5.1.1"
+    "cookie-parser": "^1.4.6"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.3",
+    "morgan": "^1.10.0",
+    "pino": "^8.19.0",
+    "winston": "^3.12.0"
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0",
+    "nodemon": "^3.1.0",
+    "sinon": "^17.0.1",
+    "supertest": "^6.3.4"
 
 ## Authors
 
