@@ -1,8 +1,8 @@
 import { Router } from 'express'; 
  import roomTypeController from '../controllers/roomType.controller.js'; 
  import '../middlewares/authenticate.middleware.js'; 
- import '../middlewares/authorize.Middleware.js'; 
- import '../middlewares/validationMiddleware.js'; 
+ import '../middlewares/authorize.middleware.js'; 
+ import '../middlewares/validate.middleware.js'; 
   
  const roomTypeRouter = Router(); 
   
