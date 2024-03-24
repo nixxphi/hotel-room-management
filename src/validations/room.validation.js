@@ -1,5 +1,5 @@
 import joi from 'joi';
-import validateObjectId  from '../utils/id.util.js'
+import validateObjectId  from '../utils/id.utils.js'
 
 export const CreateRoomSchema = {
     body: joi.object({
