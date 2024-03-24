@@ -1,5 +1,5 @@
 import sinon from 'sinon';
-
+import '..src/server.js'
 describe('Room Router', () => {
   describe('POST /api/v1/rooms', () => {
     it('should create a new room', async () => {
