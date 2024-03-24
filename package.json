@@ -11,7 +11,7 @@
      "start": "node -r dotenv/config src/server.js" 
    }, 
    "keywords": [], 
-   "author": "mosesNjoku", 
+   "author": "Igwenagu Chukwuma", 
    "license": "ISC", 
    "dependencies": { 
      "bcrypt": "^5.1.1", 
