@@ -1,7 +1,7 @@
 import roomRouter from "./room.route.js"; 
 import roomTypeRouter from "./roomType.route.js"; 
 import userRouter from "./user.route.js"; 
-  
+import roomValidator from '../validation/room.validate.js 
  const apiVersion = '/api/v1' 
  export default (app) => { 
    app.use(`${apiVersion}/rooms`, roomRouter); 
