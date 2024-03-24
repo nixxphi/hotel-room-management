@@ -5,6 +5,12 @@ import { model, Schema } from 'mongoose'
          type: String, 
          required: true 
      },  
+     description: {
+        type: String
+  },
+     star_rank: {
+     type:number
+   },
      deleted: { 
          type: Boolean, 
          default: false 
