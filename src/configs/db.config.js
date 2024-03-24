@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
      const startdb = () => { 
          mongoose.set('strictQuery', false) 
          mongoose.connect(process.env.MONGODB_URI, { 
-             dbName: 'redcluster' 
+             dbName: 'Redcluster' 
          }) 
          .then(() => { 
              logger.info('Database connected successfully...') 
