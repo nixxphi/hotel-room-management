@@ -42,7 +42,7 @@ import { roomService, roomTypeService } from "../services/index.services.j
  }; 
   
  // Controller function for fetching a single room type by ID 
- const getARoomType = async (req, res) => { 
+ const getRoomTypeById = async (req, res) => { 
    try { 
      const roomType = await roomTypeService.find(req.params.id); 
      if (!roomType) { 

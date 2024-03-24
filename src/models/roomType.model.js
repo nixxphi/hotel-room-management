@@ -9,7 +9,7 @@ import { model, Schema } from 'mongoose'
         type: String
   },
      star_rank: {
-     type:number
+     type: Number
    },
      deleted: { 
          type: Boolean, 

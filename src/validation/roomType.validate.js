@@ -1,6 +1,6 @@
 
 import Joi from 'joi';
-import validate from '../middleware/validate.middleware.js';
+import validate from '../middlewares/validate.middleware.js';
 
 const roomTypeValidationSchema = {
   body: Joi.object({

@@ -5,3 +5,4 @@ import express from "express"
   
  mainMiddleware(app) 
  
+export default app;
