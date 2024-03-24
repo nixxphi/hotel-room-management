@@ -1,7 +1,7 @@
 import chai from 'chai';
 import sinon from 'sinon';
-import RoomType from '../models/RoomType';
-import roomTypeController from '../controllers/roomTypeController';
+import RoomType from '../models/roomType.model.js';
+import roomTypeController from '../controllers/roomType.controller.js';
 
 const { expect } = chai;
 
@@ -12,12 +12,7 @@ describe('RoomType Controller', () => {
                 body: {
                     name: 'Single Deluxe',
                     description: 'Single air-conditioned room with WiFi access.',
-                    capacity: 2,
-                    beds: 1,
-                    price: 6800,
-                    amenities: 'Wifi, air conditioning and a fully functional bathroom',
-                    image: 'room.jpg',
-                    isAvailable: true
+                    star_rank: 2,
                 }
             };
             const res = {
