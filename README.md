@@ -98,23 +98,23 @@ hotelRooms/
 ## Technologies Used
 
 - Node.js
-    "bcrypt": "^5.1.1"
-    "cookie-parser": "^1.4.6"
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.1",
-    "express-async-errors": "^3.1.1",
-    "helmet": "^7.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.2.3",
-    "morgan": "^1.10.0",
-    "pino": "^8.19.0",
-    "winston": "^3.12.0"
-    "chai": "^5.1.0",
-    "mocha": "^10.3.0",
-    "nodemon": "^3.1.0",
-    "sinon": "^17.0.1",
-    "supertest": "^6.3.4"
+- "bcrypt": "^5.1.1"
+- "cookie-parser": "^1.4.6"
+- "cors": "^2.8.5"
+- "dotenv": "^16.4.5"
+- "express": "^4.19.1"
+- "express-async-errors": "^3.1.1"
+- "helmet": "^7.1.0"
+- "jsonwebtoken": "^9.0.2"
+- "mongoose": "^8.2.3"
+- "morgan": "^1.10.0"
+- "pino": "^8.19.0"
+- "winston": "^3.12.0"
+- "chai": "^5.1.0"
+- "mocha": "^10.3.0"
+- "nodemon": "^3.1.0"
+- "sinon": "^17.0.1"
+- "supertest": "^6.3.4"
 
 ## Authors
 
