@@ -5,14 +5,14 @@ import mongoose from 'mongoose';
      const startdb = () => { 
          mongoose.set('strictQuery', false) 
          mongoose.connect(process.env.MONGODB_URI, { 
-             dbName: 'TheDevs' 
+             dbName: 'redcluster' 
          }) 
          .then(() => { 
-             logger.info('Database connected successfully...') 
+             logger.info('Database connected successfully...') 
          }) 
          .catch(err => { 
-             logger.error('Error connecting to the database:', err) 
-             logger.info('Reconnecting to database...') 
+             logger.error('Error connecting to the database:', err) 
+             logger.info('Reconnecting to database...') 
              startdb() 
          }) 
      } 

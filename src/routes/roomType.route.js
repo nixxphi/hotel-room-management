@@ -3,7 +3,7 @@ import { Router } from 'express';
 // import '../middlewares/authenticate.middleware.js'; 
 // import '../middlewares/authorize.middleware.js'; 
 // import '../middlewares/validate.middleware.js'; 
-import roomTypeValidator from '../validation/roomType.validate.js'
+// import roomTypeValidator from '../validation/roomType.validate.js'
  const roomTypeRouter = Router(); 
   
  // POST endpoint for creating a new room type 
