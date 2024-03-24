@@ -15,4 +15,4 @@ name: Joi.string().required(),
 
 const roomsValidationMiddleware = validate(roomsValidationSchema);
 
-export default roomsValidationMiddleware;
+export default roomValidator;
