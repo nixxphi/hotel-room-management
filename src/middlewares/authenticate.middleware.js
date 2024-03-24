@@ -1,8 +1,8 @@
 import {
     verifyToken,
     checkTokenValidity
-  } from '../utils/index.util';
-  import { userService } from '../services/index.service'
+  } from '../utils/token.util.js';
+  import { userService } from '../services/index.service.js'
   
   export default async (
     req,
@@ -21,7 +21,7 @@ import {
               message: 'Login to continue',
             });
       }
-  
+     
       // Extracts the expiration date from the token available
       const isValidToken = await checkTokenValidity(token);
       if (!isValidToken) {
@@ -30,10 +30,10 @@ import {
               message: 'Session expired. Sign in again to continue.',
             });
       }
-  
+      
       // Decode the user token to get user credentials
       const decoded = await verifyToken(token);
-      const user = await userService.findOne({
+      const user = await userService.find({
         _id: decoded._id,
         deleted: false
       });

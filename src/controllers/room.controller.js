@@ -1,15 +1,15 @@
-import { roomService, roomTypeService } from "../services/index.services.js";
+import { roomService, roomTypeService } from "../services/index.service.js";
 
-// Controller functions for managing rooms
-const roomController = {
+class RoomController{
   // Creating rooms
   async createRoom(req, res) {
     try {
       const { name, roomType, price } = req.body;
 
-      const isExistingRoom = roomService.find({
+      const isExistingRoom = await roomService.find({
         name 
       })
+      
       if(isExistingRoom) {
         return res.status(401).json({ 
           success: false,
@@ -17,7 +17,7 @@ const roomController = {
         });
       }
 
-      const isExistingRoomType = roomTypeService.find({
+      const isExistingRoomType = await roomTypeService.find({
         _id: roomType
       })
       if(!isExistingRoomType) {
@@ -27,7 +27,7 @@ const roomController = {
         });
       }
   
-      const newRoom = roomService.create({ name, roomType, price });
+      const newRoom = await roomService.create({ name, roomType, price });
       
       return res.status(201).json({ 
         message: 'Room created successfully', 
@@ -38,7 +38,7 @@ const roomController = {
       console.error(error);
       return res.status(500).json({ message: error.message });
     }
-  },
+  }
 
   // FOR FETCHING ALL ROOMS
   async getRoomsByFilter(req, res) {
@@ -87,7 +87,7 @@ const roomController = {
         message: error.message 
       });
     }
-  },
+  }
 
   // FOR FETCHING A SINGLE ROOM BY ID
   async getARoom(req, res) {
@@ -114,14 +114,14 @@ const roomController = {
       })
 
     }
-  },
+  }
 
   // FOR UPDATING A ROOM BY ID
-  async updateRoomById(req, res) {
+  async updateRoom(req, res) {
     try {
       const { name, price, roomType } = req.body;
       
-      const isExistingRoom = roomService.find({
+      const isExistingRoom = await roomService.find({
         name 
       })
       if(isExistingRoom) {
@@ -131,7 +131,7 @@ const roomController = {
         });
       }
 
-      const isExistingRoomType = roomTypeService.find({
+      const isExistingRoomType = await roomTypeService.find({
         _id: roomType
       })
       if(!isExistingRoomType) {
@@ -176,10 +176,10 @@ const roomController = {
         message: error.message 
       });
     }
-  },
+  }
 
   // FOR DELETING A ROOM BY ID
-  async deleteRoomById(req, res) {
+  async deleteRoom(req, res) {
     try {
       const room = await roomService.getOne(req.params.id);
       if (!room) {
@@ -213,4 +213,4 @@ const roomController = {
   }
 };
 
-export default roomController;
+export default new RoomController();

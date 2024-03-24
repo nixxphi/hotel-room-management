@@ -1,13 +1,20 @@
 import { model, Schema } from 'mongoose'
 
 const userSchema = new Schema({
-    filename: {
+    username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     }, 
-    secure_url: {
+    password: {
         type: String,
         required: true
+    },
+    role: {
+        type: String,
+        required: true,
+        enum: ['admin', 'guest'],
+        default: "guest"
     },
     deleted: {
         type: Boolean,
