@@ -1,4 +1,5 @@
 import { Router } from 'express'; 
+import userValidator from '../validation/user.valudate.js'
  import { register, login } from '../controllers/user.controller.js'; 
   
  const userRouter = Router(); 
